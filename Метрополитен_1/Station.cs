@@ -12,6 +12,7 @@ namespace Метро1
             bool hasParkAndRide;
             bool hasNearbyCableCar;
             List<Station> transfers;
+            
 
             public string Station(string name, string colour)
             {
@@ -19,16 +20,16 @@ namespace Метро1
                 this.color = color;
             }
 
-            public void Station(string name, string color, List<Station> transfers)
+            public Station(string name, string color, List<Station> transfers)
             {
                 this.name = name;
                 this.color = color;
-                this.transfers = transfers;
+                this.transfers = new List<station>(); 
 
-
+                
                 foreach (Station i in transfers)
                 {
-                    transfers.Add(i);
+                    this.transfers.Add(i);
                 }
 
             }
