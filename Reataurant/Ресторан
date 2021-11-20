@@ -11,7 +11,10 @@ namespace restaurant
         public static int valueAddedTax;
         
 
-
+        public virtual double Price()
+        {
+            return price;
+        }
         public item(string name, double price, int valueAddedTax)
         {
 
@@ -75,9 +78,9 @@ namespace restaurant
         static void Main(string[] args)
         {
             List<item> items = new List<item>();
-            item.Additem(items, 8);
-            item.Additem(items, 3);
-            item.Additem(items, 6);
+            item.Additem(items, new Food("Котлета с макаронами", 2.33, 2));
+            item.Additem(items, new Food("", 2.33, 2));
+            item.Additem(items, new Drink("Водка с водой", 2.5, 3));
 
 
             foreach (var i in items)
